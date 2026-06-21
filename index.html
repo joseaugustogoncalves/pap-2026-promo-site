@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error": "#ff7351",
+                        "tertiary": "#ffeea5",
+                        "surface-container-lowest": "#000000",
+                        "error-dim": "#d53d18",
+                        "tertiary-dim": "#edd13a",
+                        "on-primary-container": "#4a5e00",
+                        "secondary-fixed": "#ece856",
+                        "surface-tint": "#f3ffca",
+                        "inverse-surface": "#f9f9f9",
+                        "surface-container-low": "#131313",
+                        "primary-fixed": "#cafd00",
+                        "surface-bright": "#2c2c2c",
+                        "error-container": "#b92902",
+                        "on-error": "#450900",
+                        "surface": "#0e0e0e",
+                        "inverse-on-surface": "#555555",
+                        "tertiary-fixed": "#fce047",
+                        "on-primary-fixed": "#3a4a00",
+                        "on-tertiary-container": "#5d5000",
+                        "on-surface-variant": "#ababab",
+                        "surface-container-highest": "#262626",
+                        "on-tertiary-fixed": "#483d00",
+                        "primary-container": "#cafd00",
+                        "secondary": "#ece856",
+                        "on-secondary": "#565400",
+                        "primary-dim": "#beee00",
+                        "secondary-container": "#636100",
+                        "background": "#0e0e0e",
+                        "on-secondary-container": "#fffca4",
+                        "surface-container": "#191919",
+                        "on-surface": "#ffffff",
+                        "on-tertiary": "#665800",
+                        "surface-dim": "#0e0e0e",
+                        "surface-container-high": "#1f1f1f",
+                        "secondary-dim": "#ddda49",
+                        "surface-variant": "#262626",
+                        "on-background": "#ffffff",
+                        "on-secondary-fixed-variant": "#605e00",
+                        "outline": "#757575",
+                        "on-primary": "#516700",
+                        "tertiary-container": "#fce047",
+                        "on-primary-fixed-variant": "#526900",
+                        "primary": "#f3ffca",
+                        "tertiary-fixed-dim": "#edd13a",
+                        "outline-variant": "#484848",
+                        "on-secondary-fixed": "#434100",
+                        "primary-fixed-dim": "#beee00",
+                        "on-tertiary-fixed-variant": "#685900",
+                        "inverse-primary": "#516700",
+                        "on-error-container": "#ffd2c8",
+                        "secondary-fixed-dim": "#ddda49"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(204, 255, 0, 0.4);
+        }
+
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopAppBar -->
+    <header class="fixed top-10 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0E0E0E] dark:bg-[#0E0E0E]">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-[#CCFF00]" data-icon="terminal">terminal</span>
+            <span class="text font-black tracking-tighter text-[#CCFF00] font-['Space_Grotesk'] uppercase">Técnico de
+                Gestão e Programação de Sistemas Informáticos</span>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section
+            class="relative min-h-[618px] flex flex-col items-start justify-end px-6 md:px-12 py-24 bg-surface-container-lowest overflow-hidden">
+            <div
+                class="absolute right-0 top-0 h-full w-1/3 bg-[#CCFF00]/5 flex items-center justify-center opacity-30 md:opacity-100">
+                <span
+                    class="vertical-text text-[12vw] font-black text-[#CCFF00] tracking-tighter leading-none select-none">TGPSI</span>
+            </div>
+            <div class="relative z-10 max-w-5xl">
+                <div
+                    class="mb-6 inline-flex items-center gap-4 bg-[#CCFF00] text-[#516700] px-4 py-1 font-headline font-bold uppercase tracking-widest text-sm">
+                    <span>MARÇO 2026</span>
+                    <span class="w-2 h-2 rounded-full bg-[#516700] animate-pulse"></span>
+                    <span>LIVE EVENT</span>
+                </div>
+                <h1
+                    class="font-headline font-black text-6xl md:text-[8rem] leading-[0.9] tracking-tighter uppercase mb-8">
+                    PROVA DE APTIDÃO <br />
+                    <span class="text-[#CCFF00] neon-glow">PROFISSIONAL</span>
+                </h1>
+                <div class="flex flex-col md:flex-row gap-12 md:items-end">
+                    <p
+                        class="font-headline text-2xl md:text-4xl font-light uppercase tracking-tight max-w-2xl text-on-surface-variant">
+                        APRESENTAÇÕES FINAIS <br />
+                        <span class="text-on-surface font-bold">30 DE JUNHO | Auditório jorge santos</span>
+                    </p>
+                    <div class="flex items-center gap-4 border-l-4 border-[#CCFF00] pl-6 py-2">
+                        <span class="font-headline text-5xl font-black text-[#CCFF00]">2026</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Grid Section -->
+        <section class="bg-surface px-6 md:px-12 py-16">
+            <div class="flex flex-col md:flex-row justify-between items-baseline mb-20 gap-8">
+                <div>
+                    <h2 class="font-headline font-black text-5xl uppercase tracking-tighter mb-4">OS PROJETOS</h2>
+                    <div class="h-1 w-24 bg-[#CCFF00]"></div>
+                </div>
+                <p class="font-body text-on-surface-variant max-w-md uppercase tracking-widest text-xs leading-relaxed">
+                </p>
+            </div>
+
+            <div class="bento-grid">
+                <!-- Project 1 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Cão Trilha Logo" class="w-full h-full object-contain"
+                                src="images/CaoTrilha.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/tSZMN8uEXow?si=29YP8xEft1WRcMbR" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            CÃO TRILHA</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Dogwalking • Dogsitting •
+                            Daycare • Petsitting</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://marcomex68.github.io/Marcourl/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="World Cleaners Logo" class="w-full h-full object-contain"
+                                src="images/WorldCleaners.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="YOUTUBE_VIDEO_URL_02" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            WORLD CLEANERS</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">O World Cleaners é um jogo
+                            criado com o objetivo de reduzir a poluição no mundo.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://www.youtube.com/watch?v=J0Z_pr1tWe8" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Vital Quest Logo" class="w-full h-full object-contain"
+                                src="images/VitalQuest.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://www.youtube.com/watch?v=yETXZUgqLhg" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            VITAL QUEST</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Um jogo educativo que ensina
+                            de forma divertida a importância de manter hábitos saudáveis no dia a dia.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://mateus-penelas.github.io/VitalQuest/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Just Build It Logo" class="w-full h-full object-contain"
+                                src="images/JustBuildIt.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/VePw1pEZgqo" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            JUST BUILD IT</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Aplicação para ajudar donos de
+                            obras/donos de empresa da construção civil.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://tiagovaz1.github.io/JustBuildIt/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Basswalker Logo" class="w-full h-full object-contain"
+                                src="images/basswalker.jpg" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="YOUTUBE_VIDEO_URL_05" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            BASSWALKER</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Um jogo de ritmo em que
+                            utilizas um baixo elétrico real para aprender a tocar.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://rodrigo-o-andraz.github.io/basswalker-site/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Screen Alert Logo" class="w-full h-full object-contain"
+                                src="images/ScreenAlert.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://www.youtube.com/watch?v=J0Z_pr1tWe8" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            SCREEN ALERT</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Aplicação que envia mensagens
+                            para um ecrã com projetor em casa de idosos, garantindo fácil leitura. Inclui também
+                            lembretes para a toma de medicamentos, promovendo autonomia e cuidado.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://rodrigo-pereira3.github.io/ScreenAlertSitePromo/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="MyPetGo Logo" class="w-full h-full object-contain" src="images/MyPetGo.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/tcgwhcFdax8" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            MyPetGo</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Peça passeios e cuidados para
+                            o seu animal na nossa app e avalie-nos depois da experiência!</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://franciscoprino.github.io/MyPetGoPromoSite/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="TechUrbis Logo" class="w-full h-full object-contain" src="images/TechUrbis.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/owC9ul626j8" target="_blank">VER VÍDEO 1</a></span>
+                                <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a href="https://youtu.be/54EBAxVkq88"
+                                        target="_blank">VER VÍDEO 2</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            TechUrbis</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">A TechUrbis desenvolve
+                            soluções tecnológicas que tornam as cidades mais inteligentes, eficientes e sustentáveis.
+                        </p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://rodrigogomes08.github.io/TechUrbisSite-Partilhar/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Imoral Logo" class="w-full h-full object-contain" src="images/Imoral.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/HoGWNqveFM0" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            Imoral</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">A Imoral é uma marca de roupa
+                            alternativa que procura ser também um espaço comunitário para todos os interessados em moda
+                            alternativa em Portugal.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://arth-rr.github.io/imoral-Promo-Site/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="SGM Logo" class="w-full h-full object-contain" src="images/SGM.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/xaykLeJqwFk" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            SGM</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">O Sistema de Gestão Mecânica é
+                            uma solução digital criada para otimizar e simplificar todos os processos operacionais de
+                            uma oficina automóvel, aumentando a eficiência e a organização.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://lourencochaves10.github.io/Site_SGM/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 11 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="Igrejas+ Logo" class="w-full h-full object-contain" src="images/Igreja+.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="YOUTUBE_VIDEO_URL_11" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            Igrejas+</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Igrejas+ é uma app que ajuda a
+                            organizar e a promover eventos e atividades da igreja.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://mariojuniorchimene742.github.io/igrejas-_promosite/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 12 -->
+                <div
+                    class="group relative bg-surface-container-low p-10 flex flex-col gap-8 transition-all hover:bg-surface-container">
+                    <div class="flex justify-between items-start">
+                        <div class="w-16 h-16 bg-[#CCFF00] flex items-center justify-center overflow-hidden">
+                            <img alt="MEDIA Logo" class="w-full h-full object-contain" src="images/MedAI.png" />
+                        </div>
+                        <span class="font-headline text-xs font-bold text-[#CCFF00] tracking-widest"><a
+                                href="https://youtu.be/VdJs5Tjy1NI" target="_blank">VER VÍDEO</a></span>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-headline font-black text-4xl uppercase tracking-tighter mb-4 group-hover:text-[#CCFF00] transition-colors">
+                            MEDAI</h3>
+                        <p class="font-body text-on-surface-variant leading-relaxed mb-8">Chatbot medico focado na saúde
+                            do utilizador, disponibilizando funcionalidades para uma triagem simples.</p>
+                    </div>
+                    <div class="mt-auto pt-8 border-t border-[#CCFF00]/10 flex justify-between items-center">
+                        <span class="text-xs font-mono text-[#CCFF00]/60"></span>
+                        <a href="https://daviclementee.github.io/MedIA_PromoSite/" target="_blank"
+                            class="text-[#CCFF00] hover:translate-x-2 transition-transform">
+                            <span class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-4 bg-[#000000] dark:bg-[#000000] border-t border-[#CCFF00]/15">
+        <div class="flex flex-col gap-2">
+            <span class="text-[#CCFF00] font-bold font-['Inter'] text-sm tracking-widest uppercase">TGPSI</span>
+            <span class="text-[#ABABAB] font-['Inter'] text-xs tracking-widest uppercase">© 2026 ALL RIGHTS
+                RESERVED.</span>
+        </div>
+        <div class="flex gap-8"></div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-[#CCFF00]/40 text-sm" data-icon="code"></span>
+            <span class="text-[#CCFF00] font-mono text-[10px] tracking-widest"></span>
+        </div>
+    </footer>
+</body>
+
+</html>
